@@ -6,11 +6,22 @@
 <meta name="robots" content="noindex">
 <title>Posting tool · Digital Shield</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="/admin.css">
-<script src="/admin.js" defer></script>
+<link rel="stylesheet" href="/admin/admin.css">
+<script src="/admin/admin.js" defer></script>
 </head>
 <body>
-<div class="app">
+<main id="login" class="login" hidden>
+  <form id="login-form" class="login-card" autocomplete="on">
+    <h1>Posting tool</h1>
+    <p class="muted">Sign in to manage Digital Shield posts.</p>
+    <label for="login-password">Admin password</label>
+    <input id="login-password" type="password" autocomplete="current-password" required>
+    <button type="submit" class="btn primary" id="btn-login">Sign in</button>
+    <p id="login-error" class="login-error" role="alert" hidden></p>
+  </form>
+</main>
+
+<div class="app" id="admin-app" hidden>
 
   <aside class="side">
     <div class="side-head">
@@ -19,7 +30,8 @@
     </div>
     <ul id="list" class="list" aria-label="Posts"></ul>
     <p class="side-foot">
-      <a id="preview-link" href="#" target="_blank" rel="noopener">Open live preview ↗</a>
+      <a id="preview-link" href="/" target="_blank" rel="noopener">Open live site ↗</a>
+      <button type="button" id="btn-logout" class="btn ghost" hidden>Log out</button>
     </p>
   </aside>
 
@@ -77,8 +89,8 @@
 **bold**   _italic_
 - bullet point
 1. numbered step
-[link text](https://example.com)
-![image description](/uploads/photo.jpg)</code></pre>
+[link text](https://example.com)</code></pre>
+        <p>Use the <strong>Image</strong> button to upload and insert pictures into an article.</p>
       </details>
 
       <footer class="actions">

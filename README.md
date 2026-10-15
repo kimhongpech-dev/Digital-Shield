@@ -1,20 +1,21 @@
 # Digital Shield — bilingual cyber-safety news site
 
-A fast static news website in **English and Khmer** about protecting yourself from hackers, phishing, scams and privacy threats. There is **no database**: every post is a small JSON file, the site is generated into plain HTML, and Vercel serves it.
+A fast bilingual news website in **English and Khmer** about protecting yourself from hackers, phishing, scams and privacy threats. Vercel serves the fast, generated site shell; published posts and images are read from a private Vercel Blob store at request time.
 
-You write posts with a **local posting tool** (`npm run admin`). It saves the post, uploads your images, shows a live preview, and pushes to GitHub. Vercel then rebuilds and updates the live site automatically.
+The hosted posting tool at `/admin` saves posts and images directly to Blob. Published changes appear on the public site immediately, without a GitHub push or Vercel redeploy. Drafts stay private.
 
 ```
-You write a post  →  posting tool saves it + pushes to GitHub  →  Vercel rebuilds  →  site is live
+Hosted admin  →  private Vercel Blob  →  public site updates immediately
 ```
 
 ## What you need
 
-- [Node.js](https://nodejs.org) 18 or newer
+- [Node.js](https://nodejs.org) 20.6 or newer
 - [Git](https://git-scm.com)
 - A free [GitHub](https://github.com) account and a free [Vercel](https://vercel.com) account
+- A private Vercel Blob store connected to the project
 
-## 1. Run it on your computer
+## 1. Run the local preview (optional)
 
 ```bash
 npm install
@@ -25,26 +26,47 @@ Then open:
 
 | Address | What it is |
 | --- | --- |
-| http://localhost:4000 | **Posting tool** — write, edit, delete, publish |
+| http://localhost:4000 | Local posting tool — edits local files and can publish them to GitHub |
 | http://localhost:4001 | **Live preview** of the website exactly as visitors will see it |
 
 The tool only listens on your own computer (`127.0.0.1`); nobody else can reach it. Stop it with `Ctrl+C`.
 
-## 2. Write a post
+## 2. Deploy the hosted admin
 
-1. Click **+ New post**.
-2. Pick a **topic** and **date**. Tick **Draft** to save without showing it on the website.
-3. Choose a **cover image** (JPG, PNG, WebP or GIF). Big photos are shrunk automatically.
-4. Fill in the **English** and **ខ្មែរ** tabs: title, short summary and the article text. You can fill in just one language; the other falls back to it.
-5. Use the buttons above the text box for headings, bold, lists, links and **images inside the article**.
-6. Click **Save**, then check the preview at http://localhost:4001.
-7. Click **Publish to GitHub** when you are happy.
+1. Push the project code to GitHub and import the repository in Vercel. Use the existing build settings: Framework **Other**, build command `npm run build`, output directory `dist`.
+2. In the Vercel project, open **Storage → Create Storage → Blob** and create a **private** Blob store. Connect it to the project and include the Production and Development environments.
+3. In **Settings → Environment Variables**, add:
+   - `ADMIN_PASSWORD`: a strong password of at least 12 characters (select Production and Preview).
+   - `ADMIN_SESSION_SECRET`: a random secret of at least 32 characters (select Production and Preview). Generate one with `node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"`.
+4. Redeploy once so the new store and environment variables are available to the app.
+5. Install and authenticate the Vercel CLI, link this project, and pull the Development environment locally:
 
-Visitors switch language with the **EN / ខ្មែរ** button in the header. The choice is remembered, and Khmer is chosen automatically for browsers set to Khmer. You can also share links like `https://your-site.vercel.app/?lang=km`.
+   ```bash
+   npm install --global vercel
+   vercel login
+   vercel link
+   vercel env pull .env.local
+   npm run seed:blob
+   ```
 
-> The five articles that come with the project are samples. Delete them in the tool whenever you like.
+   This copies the bundled sample posts and images into Blob. `.env.local` is ignored by Git; never commit it.
 
-## 3. Put it on GitHub (once)
+Open `https://your-site.vercel.app/admin` and sign in with `ADMIN_PASSWORD`.
+
+> Run `npm run seed:blob` only for the initial import. It overwrites matching Blob posts with the repository copies.
+
+## 3. Publish posts without redeploying
+
+1. Open `/admin` on your deployed site and sign in.
+2. Create or edit a post, choose a cover image, and fill in the English and Khmer tabs. The editor includes a Markdown preview and supports images inside articles.
+3. Tick **Draft** to save privately, or leave it unchecked to publish.
+4. Click **Save & publish**. Published posts and edits appear on the live site immediately. Saving, uploading, and deleting posts do not push to GitHub or trigger a Vercel deployment.
+
+Visitors switch language with the **EN / ខ្មែរ** button. The choice is remembered, and Khmer is chosen automatically for browsers set to Khmer. You can also share links like `https://your-site.vercel.app/?lang=km`.
+
+The local tool started by `npm run admin` remains available for local previews and Git-based editing. To publish without a deployment, use the hosted `/admin` page instead.
+
+## 4. Put the code on GitHub (once)
 
 Create an **empty** repository on GitHub (no README, no .gitignore), then in this folder:
 
@@ -58,13 +80,13 @@ git push -u origin main
 
 If Git asks you to sign in, follow the prompt (GitHub's browser sign-in or a personal access token).
 
-## 4. Deploy on Vercel (once)
+## 5. Deploy on Vercel (once)
 
 1. On [vercel.com](https://vercel.com) choose **Add New → Project** and import your GitHub repository.
 2. Leave the settings as they are. `vercel.json` already tells Vercel to run `npm run build` and serve the `dist` folder. Framework preset: **Other**.
 3. Click **Deploy**.
 
-From now on, every **Publish to GitHub** click triggers a new deployment automatically. It is live about a minute later.
+Code changes pushed to GitHub still trigger Vercel deployments. Changes made in the hosted `/admin` tool update Blob directly and do not redeploy.
 
 Optional: set `"url"` in `content/site.json` to your final address (for example `"https://digital-shield.vercel.app"`). The next build then adds a sitemap and social-sharing images.
 
@@ -76,11 +98,13 @@ content/posts/*.json     One file per post
 public/uploads/          Images you upload
 public/assets/           CSS, JavaScript and the Inter + Noto Sans Khmer fonts
 scripts/build.js         Turns the content into the website (dist/)
-admin/                   The local posting tool
+scripts/seed-blob.js     Imports the bundled sample posts and images into Blob
+api/                     Authenticated admin and live-content API
+admin/                   The local and hosted posting tool
 vercel.json              Deployment settings and security headers
 ```
 
-A post file looks like this, so you can also edit them by hand:
+The bundled sample posts in `content/posts/` use this format. Once the hosted admin is set up, Blob is the live source; editing these local files alone does not change the hosted site.
 
 ```json
 {
@@ -99,7 +123,7 @@ To add or rename a topic, edit `categories` in `content/site.json`. To change co
 
 ## Good to know
 
-- **Why the tool runs on your computer, not on the live site.** The live site on Vercel is read-only static files, which keeps it fast, cheap and hard to attack. Posting needs to write files and use Git, so it runs locally.
+- **Storage and privacy.** Posts, drafts and uploaded images live in a private Blob store. API routes check the admin session before changing content; draft posts are not returned to public visitors.
 - **Several writers?** Everyone clones the repository and runs `npm run admin` with their own GitHub access.
 - **"git push failed".** Make sure you are signed in to GitHub on this computer and can push to the repository (try `git push` in a terminal to see the full message).
 - **"Port already in use".** Run `ADMIN_PORT=4100 PREVIEW_PORT=4101 npm run admin`.

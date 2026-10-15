@@ -4,6 +4,10 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/posts/:slug", "destination": "/404.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

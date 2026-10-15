@@ -395,7 +395,13 @@ const adminServer = http.createServer(async (req, res) => {
       'Referrer-Policy': 'no-referrer',
       'Cache-Control': 'no-store',
     };
-    const staticMap = { '/': 'index.html', '/admin.css': 'admin.css', '/admin.js': 'admin.js' };
+    const staticMap = {
+      '/': 'index.html',
+      '/admin.css': 'admin.css',
+      '/admin.js': 'admin.js',
+      '/admin/admin.css': 'admin.css',
+      '/admin/admin.js': 'admin.js',
+    };
     if (staticMap[url.pathname]) return serveFile(res, path.join(ADMIN_DIR, staticMap[url.pathname]), headers);
 
     let m;

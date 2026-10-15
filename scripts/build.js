@@ -18,6 +18,7 @@ const ROOT = path.resolve(__dirname, '..');
 const CONTENT = path.join(ROOT, 'content');
 const POSTS_DIR = path.join(CONTENT, 'posts');
 const PUBLIC = path.join(ROOT, 'public');
+const ADMIN = path.join(ROOT, 'admin');
 const DIST = path.join(ROOT, 'dist');
 const LANGS = ['en', 'km'];
 
@@ -227,10 +228,10 @@ function indexPage(site, posts) {
       </div>`
     : '';
 
-  const grid = posts.length
-    ? `<div class="grid">\n${posts.map((p, i) => card(site, p, i === 0 && posts.length > 2)).join('\n')}\n</div>
-       <p class="empty" hidden><span class="en">No posts in this topic yet.</span><span class="km" lang="km">មិនទាន់មានអត្ថបទក្នុងប្រធានបទនេះទេ។</span></p>`
-    : `<p class="empty"><span class="en">No posts yet. Run <code>npm run admin</code> to write the first one.</span><span class="km" lang="km">មិនទាន់មានអត្ថបទទេ។ សូមដំណើរការ <code>npm run admin</code> ដើម្បីសរសេរអត្ថបទដំបូង។</span></p>`;
+  const grid = `<div class="grid" id="live-posts">
+${posts.map((p, i) => card(site, p, i === 0 && posts.length > 2)).join('\n')}
+</div>
+<p class="empty" id="live-empty"${posts.length ? ' hidden' : ''}><span class="en">No posts in this topic yet.</span><span class="km" lang="km">មិនទាន់មានអត្ថបទក្នុងប្រធានបទនេះទេ។</span></p>`;
 
   const tips = (site.tips || [])
     .map(
@@ -280,6 +281,19 @@ ${tips}
 }
 
 function postPage(site, post, all) {
+  const rendered = renderPostContent(site, post, all);
+  return page({
+    site,
+    titles: rendered.titles,
+    descriptions: rendered.descriptions,
+    image: post.image,
+    type: 'article',
+    urlPath: `/posts/${post.slug}`,
+    main: rendered.main,
+  });
+}
+
+function renderPostContent(site, post, all) {
   const bodies = LANGS.map((l) => {
     const f = field(post.body, l);
     return `<div class="prose ${l}" lang="${f.lang}">\n${renderMarkdown(f.text)}\n</div>`;
@@ -320,15 +334,11 @@ ${moreHtml}`;
     km: `${field(post.title, 'km').text} · ${field(site.name, 'km').text}`,
   };
   const sum = field(post.summary, 'en').text || field(post.title, 'en').text;
-  return page({
-    site,
+  return {
+    main,
     titles,
     descriptions: { en: sum, km: field(post.summary, 'km').text || sum },
-    image: post.image,
-    type: 'article',
-    urlPath: `/posts/${post.slug}`,
-    main,
-  });
+  };
 }
 
 function notFoundPage(site) {
@@ -355,6 +365,11 @@ function build() {
   fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(path.join(DIST, 'posts'), { recursive: true });
   if (fs.existsSync(PUBLIC)) fs.cpSync(PUBLIC, DIST, { recursive: true });
+  fs.mkdirSync(path.join(DIST, 'admin'), { recursive: true });
+  for (const file of ['index.html', 'admin.css', 'admin.js']) {
+    fs.copyFileSync(path.join(ADMIN, file), path.join(DIST, 'admin', file));
+  }
+  fs.cpSync(path.join(PUBLIC, 'assets', 'fonts'), path.join(DIST, 'fonts'), { recursive: true });
 
   fs.writeFileSync(path.join(DIST, 'index.html'), indexPage(site, posts));
   for (const post of posts) {
@@ -376,7 +391,19 @@ function build() {
   return { posts: posts.length };
 }
 
-module.exports = { build, loadPosts, renderMarkdown, readSite, ROOT, CONTENT, POSTS_DIR, PUBLIC, DIST };
+module.exports = {
+  build,
+  loadPosts,
+  renderMarkdown,
+  renderCard: card,
+  renderPostContent,
+  readSite,
+  ROOT,
+  CONTENT,
+  POSTS_DIR,
+  PUBLIC,
+  DIST,
+};
 
 if (require.main === module) {
   try {

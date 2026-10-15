@@ -52,6 +52,11 @@ body {
 small { font-weight: 400; }
 
 .app { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+.login { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.login-card { width: min(100%, 380px); display: grid; gap: 14px; padding: 28px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+.login-card h1, .login-card p { margin: 0; }
+.login-error { color: var(--danger); font-weight: 700; }
+.side-foot { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 
 /* Sidebar */
 .side {
@@ -89,6 +94,7 @@ small { font-weight: 400; }
 .badge { background: #ffd43b; color: #3b2f00; border-radius: 999px; padding: 0 8px; font-weight: 700; font-size: 0.72rem; }
 .side-foot { margin: 0; font-size: 0.9rem; }
 .side-foot a { color: #7de0bf; }
+.side-foot .btn { color: #fff; border-color: rgba(255, 255, 255, 0.28); }
 
 /* Editor */
 .editor { padding: 28px clamp(16px, 4vw, 48px) 80px; max-width: 1100px; width: 100%; }
@@ -98,7 +104,7 @@ small { font-weight: 400; }
 .card h3 { margin: 0 0 12px; font-size: 1rem; }
 label { display: grid; gap: 6px; font-weight: 700; font-size: 0.9rem; }
 label + label { margin-top: 14px; }
-input[type="text"], input[type="date"], select, textarea {
+input[type="text"], input[type="date"], input[type="password"], select, textarea {
   font: inherit;
   font-weight: 400;
   width: 100%;

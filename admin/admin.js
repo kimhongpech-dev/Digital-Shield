@@ -5,7 +5,15 @@
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const LANGS = ['en', 'km'];
 
-  const state = { slug: null, image: '', imageData: null, site: null, tab: 'en', busy: false };
+  const state = {
+    slug: null,
+    image: '',
+    imageData: null,
+    site: null,
+    tab: 'en',
+    busy: false,
+    hosted: location.pathname === '/admin' || location.pathname.startsWith('/admin/'),
+  };
 
   /* ---------- API ---------- */
   async function api(url, method = 'GET', body) {
@@ -34,6 +42,24 @@
   function setBusy(on) {
     state.busy = on;
     $$('#btn-save, #btn-publish, #btn-delete, #btn-new').forEach((b) => (b.disabled = on));
+  }
+
+  function showEditor() {
+    $('#login').hidden = true;
+    $('#admin-app').hidden = false;
+    $('#btn-publish').hidden = state.hosted;
+    $('#btn-logout').hidden = !state.hosted;
+    $('#btn-save').textContent = state.hosted ? 'Save & publish' : 'Save';
+    $('#preview-link').href = state.hosted ? '/' : `http://localhost:${state.site.previewPort}`;
+    $('#preview-link').textContent = state.hosted ? 'Open live site ↗' : 'Open live preview ↗';
+  }
+
+  function showLogin(message = '') {
+    $('#admin-app').hidden = true;
+    $('#login').hidden = false;
+    $('#login-error').textContent = message;
+    $('#login-error').hidden = !message;
+    if (!message) $('#login-password').focus();
   }
 
   const todayIso = () => {
@@ -148,7 +174,7 @@
   async function prepareImage(file, maxW = 1600) {
     if (!/^image\/(jpeg|png|webp|gif)$/.test(file.type)) throw new Error('Please choose a JPG, PNG, WebP or GIF image.');
     if (file.type === 'image/gif') {
-      if (file.size > 6 * 1024 * 1024) throw new Error('That GIF is too large (limit about 6 MB).');
+      if (file.size > 2.5 * 1024 * 1024) throw new Error('That GIF is too large (limit 2.5 MB).');
       return readAsDataUrl(file);
     }
     const bmp = await createImageBitmap(file);
@@ -327,7 +353,8 @@
       const res = await api('/api/posts', 'POST', readForm());
       fillForm(await api('/api/posts/' + res.slug));
       await loadList();
-      if (res.built === false) toast('Saved, but the preview could not be rebuilt: ' + res.buildError, true);
+      if (state.hosted) toast('Saved and live on the site now.');
+      else if (res.built === false) toast('Saved, but the preview could not be rebuilt: ' + res.buildError, true);
       else toast('Saved. Check the live preview, then press "Publish to GitHub".');
     } catch (err) {
       toast(err.message, true);
@@ -338,7 +365,10 @@
 
   $('#btn-delete').addEventListener('click', async () => {
     if (!state.slug || state.busy) return;
-    if (!confirm('Delete this post? This removes it from the website the next time you publish.')) return;
+    const prompt = state.hosted
+      ? 'Delete this post? It will be removed from the live site immediately.'
+      : 'Delete this post? This removes it from the website the next time you publish.';
+    if (!confirm(prompt)) return;
     setBusy(true);
     try {
       await api('/api/posts/' + encodeURIComponent(state.slug), 'DELETE');
@@ -349,6 +379,32 @@
       toast(err.message, true);
     } finally {
       setBusy(false);
+    }
+  });
+
+  $('#login-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const button = $('#btn-login');
+    const error = $('#login-error');
+    button.disabled = true;
+    error.hidden = true;
+    try {
+      await api('/api/auth', 'POST', { password: $('#login-password').value });
+      $('#login-password').value = '';
+      window.location.reload();
+    } catch (err) {
+      showLogin(err.message);
+    } finally {
+      button.disabled = false;
+    }
+  });
+
+  $('#btn-logout').addEventListener('click', async () => {
+    try {
+      await api('/api/auth', 'DELETE');
+      showLogin();
+    } catch (err) {
+      toast(err.message, true);
     }
   });
 
@@ -378,8 +434,19 @@
   });
 
   /* ---------- init ---------- */
-  (async () => {
+  async function initialize() {
     try {
+      if (state.hosted) {
+        const auth = await api('/api/auth');
+        if (!auth.configured) {
+          showLogin('Admin sign-in is not configured yet. Set ADMIN_PASSWORD and ADMIN_SESSION_SECRET in your Vercel project settings.');
+          return;
+        }
+        if (!auth.authenticated) {
+          showLogin();
+          return;
+        }
+      }
       state.site = await api('/api/site');
       const sel = $('#category');
       for (const [key, v] of Object.entries(state.site.categories || {})) {
@@ -388,12 +455,15 @@
         o.textContent = `${v.en} / ${v.km}`;
         sel.appendChild(o);
       }
-      $('#preview-link').href = `http://localhost:${state.site.previewPort}`;
+      showEditor();
       buildPanes();
       fillForm(null);
       await loadList();
     } catch (err) {
-      toast('Could not start: ' + err.message, true);
+      if (state.hosted) showLogin('Could not start: ' + err.message);
+      else toast('Could not start: ' + err.message, true);
     }
-  })();
+  }
+
+  initialize();
 })();
