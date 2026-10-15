@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-02",
+  "category": "privacy",
+  "draft": false,
+  "image": "/uploads/protect-your-privacy-on-social-media.svg",
+  "imageAlt": {
+    "en": "Illustration of an eye with a slash through it",
+    "km": "រូបភាពភ្នែកដែលមានបន្ទាត់គូសកាត់"
+  },
+  "title": {
+    "en": "Protect your privacy on social media",
+    "km": "ការពារឯកជនភាពរបស់អ្នកនៅលើបណ្តាញសង្គម"
+  },
+  "summary": {
+    "en": "What you share today can be copied, searched and used against you tomorrow. Take ten minutes to tighten your settings.",
+    "km": "អ្វីដែលអ្នកចែករំលែកថ្ងៃនេះអាចត្រូវបានចម្លង ស្វែងរក និងប្រើប្រឆាំងនឹងអ្នកនៅថ្ងៃស្អែក។ សូមចំណាយពេលដប់នាទីដើម្បីរឹតបន្តឹងការកំណត់របស់អ្នក។"
+  },
+  "body": {
+    "en": "Every post, photo and check-in adds to a profile that strangers can read. That information helps scammers write convincing messages and helps attackers answer your security questions.\n\n## Ten-minute privacy check-up\n\n1. **Review who can see your posts.** Switch old public posts to friends only where the app allows it.\n2. **Hide personal details.** Phone number, birthday, home address and workplace do not need to be public.\n3. **Limit location sharing.** Turn off precise location for photos and avoid posting live when you are away from home.\n4. **Check app permissions.** Remove third-party apps and games that no longer need access to your account.\n5. **Review tagged content.** Turn on approval for tags so others cannot place you in posts without asking.\n\n## Think before you post\n\nAsk: *would I be comfortable if a stranger, an employer or a scammer saw this?* Photos of documents, tickets, boarding passes, children's school uniforms and house fronts reveal more than you expect.\n\n## Protect other people too\n\nAsk before posting photos of friends and family, especially children. Once an image is public, you can no longer control where it goes.",
+    "km": "រាល់ការផុស រូបថត និងការចូលទីតាំង បន្ថែមទៅលើប្រវត្តិរូបដែលមនុស្សចម្លែកអាចអានបាន។ ព័ត៌មានទាំងនោះជួយជនបោកប្រាស់សរសេរសារដែលគួរឱ្យជឿ ហើយជួយអ្នកវាយប្រហារឆ្លើយសំណួរសុវត្ថិភាពរបស់អ្នក។\n\n## ការត្រួតពិនិត្យឯកជនភាពក្នុងរយៈពេលដប់នាទី\n\n1. **ពិនិត្យថាអ្នកណាអាចមើលការផុសរបស់អ្នក។** សូមប្តូរការផុសសាធារណៈចាស់ៗទៅ «មិត្តភក្តិប៉ុណ្ណោះ» ប្រសិនបើកម្មវិធីអនុញ្ញាត។\n2. **លាក់ព័ត៌មានផ្ទាល់ខ្លួន។** លេខទូរស័ព្ទ ថ្ងៃកំណើត អាសយដ្ឋានផ្ទះ និងកន្លែងធ្វើការ មិនចាំបាច់ត្រូវបង្ហាញជាសាធារណៈទេ។\n3. **កំណត់ការចែករំលែកទីតាំង។** សូមបិទទីតាំងជាក់លាក់សម្រាប់រូបថត ហើយចៀសវាងការផុសផ្ទាល់នៅពេលអ្នកមិននៅផ្ទះ។\n4. **ពិនិត្យការអនុញ្ញាតរបស់កម្មវិធី។** សូមលុបកម្មវិធី និងហ្គេមភាគីទីបីដែលលែងត្រូវការចូលប្រើគណនីរបស់អ្នក។\n5. **ពិនិត្យខ្លឹមសារដែលត្រូវបានតាក់។** សូមបើកការអនុម័តសម្រាប់ការតាក់ ដើម្បីកុំឱ្យអ្នកដទៃដាក់អ្នកក្នុងការផុសដោយមិនសុំ។\n\n## គិតមុនពេលផុស\n\nសូមសួរខ្លួនឯងថា៖ *តើខ្ញុំសុខចិត្តទេ ប្រសិនបើមនុស្សចម្លែក និយោជក ឬជនបោកប្រាស់ឃើញរឿងនេះ?* រូបថតឯកសារ សំបុត្រ សំបុត្រឡើងយន្តហោះ ឯកសណ្ឋានសាលារបស់កុមារ និងមុខផ្ទះ បង្ហាញច្រើនជាងអ្វីដែលអ្នកគិត។\n\n## ការពារអ្នកដទៃផងដែរ\n\nសូមសុំការអនុញ្ញាតមុនពេលផុសរូបថតមិត្តភក្តិ និងគ្រួសារ ជាពិសេសកុមារ។ នៅពេលរូបភាពត្រូវបានផុសជាសាធារណៈ អ្នកលែងអាចគ្រប់គ្រងកន្លែងដែលវាទៅបានទៀតហើយ។"
+  }
+}

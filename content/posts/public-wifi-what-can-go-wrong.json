@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-06",
+  "category": "network",
+  "draft": false,
+  "image": "/uploads/public-wifi-what-can-go-wrong-97c890e0.jpg",
+  "imageAlt": {
+    "en": "Illustration of a Wi-Fi signal with a warning color",
+    "km": "រូបភាពសញ្ញា Wi-Fi ជាមួយពណ៌ព្រមាន"
+  },
+  "title": {
+    "en": "Public Wi-Fi: what can actually go wrong",
+    "km": "វ៉ាយហ្វាយសាធារណៈ៖ តើអាចមានបញ្ហាអ្វីខ្លះ"
+  },
+  "summary": {
+    "en": "Cafés, airports and hotels offer free Wi-Fi, but you cannot control who else is on it. Here is how to use it more safely.",
+    "km": "ហាងកាហ្វេ អាកាសយានដ្ឋាន និងសណ្ឋាគារផ្តល់ Wi-Fi ឥតគិតថ្លៃ ប៉ុន្តែអ្នកមិនអាចគ្រប់គ្រងថាអ្នកណាផ្សេងទៀតកំពុងប្រើវាទេ។ នេះជារបៀបប្រើវាឱ្យកាន់តែមានសុវត្ថិភាព។"
+  },
+  "body": {
+    "en": "Free Wi-Fi is convenient, but a network run by someone else is a network you cannot fully trust. The risks are real, but they are manageable.\n\n## The main risks\n\n- **Fake hotspots.** An attacker creates a network named like the café's and waits for people to join.\n- **Eavesdropping.** On poorly protected networks, other users may be able to see unencrypted traffic.\n- **Fake login pages.** A hotspot can redirect you to a page that imitates a real sign-in screen.\n\n## Safer habits\n\n1. Confirm the exact network name with staff before joining.\n2. Stick to sites that show the padlock and begin with **https://**. Modern browsers warn you when a page is not secure.\n3. Avoid banking and sensitive accounts on public networks. Use mobile data instead.\n4. Use a trusted VPN if you must work on public Wi-Fi.\n5. Turn off automatic joining of open networks and forget the network when you leave.\n6. Keep your device updated and file sharing switched off.\n\n## At home too\n\nChange the default router password, use WPA2 or WPA3 encryption, and keep the router's firmware updated. Your home network is the front door to every device you own.",
+    "km": "Wi-Fi ឥតគិតថ្លៃគឺងាយស្រួល ប៉ុន្តែបណ្តាញដែលគេដំណើរការ គឺជាបណ្តាញដែលអ្នកមិនអាចទុកចិត្តបានទាំងស្រុងទេ។ ហានិភ័យមានពិតប្រាកដ ប៉ុន្តែអាចគ្រប់គ្រងបាន។\n\n## ហានិភ័យសំខាន់ៗ\n\n- **Hotspot ក្លែងក្លាយ។** អ្នកវាយប្រហារបង្កើតបណ្តាញដែលមានឈ្មោះដូចហាងកាហ្វេ ហើយរង់ចាំមនុស្សភ្ជាប់។\n- **ការស្តាប់លួច។** នៅលើបណ្តាញដែលការពារមិនល្អ អ្នកប្រើផ្សេងទៀតអាចមើលឃើញចរាចរណ៍ដែលមិនបានអ៊ិនគ្រីប។\n- **ទំព័រចូលក្លែងក្លាយ។** Hotspot អាចបញ្ជូនអ្នកទៅទំព័រដែលក្លែងធ្វើជាអេក្រង់ចូលពិតប្រាកដ។\n\n## ទម្លាប់សុវត្ថិភាពជាងមុន\n\n1. សូមបញ្ជាក់ឈ្មោះបណ្តាញជាក់លាក់ជាមួយបុគ្គលិកមុនពេលភ្ជាប់។\n2. សូមប្រើតែគេហទំព័រដែលបង្ហាញរូបសោ ហើយចាប់ផ្តើមដោយ **https://**។ កម្មវិធីរុករកទំនើបនឹងព្រមានអ្នកនៅពេលទំព័រមិនមានសុវត្ថិភាព។\n3. ចៀសវាងប្រើធនាគារ និងគណនីរសើបនៅលើបណ្តាញសាធារណៈ។ សូមប្រើអ៊ីនធឺណិតទូរស័ព្ទជំនួស។\n4. ប្រើ VPN ដែលអាចទុកចិត្តបាន បើអ្នកត្រូវធ្វើការនៅលើ Wi-Fi សាធារណៈ។\n5. បិទការភ្ជាប់ស្វ័យប្រវត្តិទៅបណ្តាញបើកចំហ ហើយលុបបណ្តាញចេញនៅពេលអ្នកចាកចេញ។\n6. រក្សាឧបករណ៍ឱ្យទាន់សម័យ និងបិទការចែករំលែកឯកសារ។\n\n## នៅផ្ទះក៏ដូចគ្នា\n\nសូមប្តូរពាក្យសម្ងាត់លំនាំដើមរបស់រ៉ោតទ័រ ប្រើការអ៊ិនគ្រីប WPA2 ឬ WPA3 ហើយរក្សាកម្មវិធីបង្កប់ (firmware) របស់រ៉ោតទ័រឱ្យទាន់សម័យ។ បណ្តាញនៅផ្ទះគឺជាទ្វារមុខនៃឧបករណ៍ទាំងអស់របស់អ្នក។"
+  }
+}

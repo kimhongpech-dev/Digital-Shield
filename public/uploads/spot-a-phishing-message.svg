@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Illustration of an email envelope with a fishing hook">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1b2b"/><stop offset="1" stop-color="#16324d"/></linearGradient>
+    <pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".05"/></pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <circle cx="930" cy="140" r="230" fill="#ff922b" opacity=".1"/>
+  <g transform="translate(300 195)">
+    <rect width="540" height="300" rx="28" fill="#f8f9fa"/>
+    <path d="M14 26 270 196 526 26" fill="none" stroke="#0b1b2b" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M22 278 205 140M518 278 335 140" stroke="#ced4da" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="270" cy="150" r="46" fill="#ff922b"/>
+    <path d="M270 126v34" stroke="#0b1b2b" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="270" cy="178" r="7" fill="#0b1b2b"/>
+  </g>
+  <g fill="none" stroke="#ff922b" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M940 60V390a70 70 0 0 1-140 0V348"/>
+    <path d="M800 348l-24-30"/>
+  </g>
+</svg>

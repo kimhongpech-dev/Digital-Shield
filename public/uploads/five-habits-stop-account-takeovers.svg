@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Illustration of a padlock">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1b2b"/><stop offset="1" stop-color="#103a45"/></linearGradient>
+    <pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".05"/></pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <circle cx="260" cy="520" r="240" fill="#12b886" opacity=".1"/>
+  <g transform="translate(432 135) scale(.8)">
+    <path d="M60 190V130a150 150 0 0 1 300 0v60" fill="none" stroke="#12b886" stroke-width="34" stroke-linecap="round"/>
+    <rect x="0" y="180" width="420" height="320" rx="40" fill="#12b886"/>
+    <circle cx="210" cy="320" r="46" fill="#0b1b2b"/>
+    <rect x="192" y="340" width="36" height="90" rx="14" fill="#0b1b2b"/>
+  </g>
+  <g fill="#12b886" opacity=".5">
+    <circle cx="150" cy="140" r="8"/><circle cx="1060" cy="520" r="8"/><circle cx="1010" cy="160" r="5"/><circle cx="190" cy="470" r="5"/>
+  </g>
+</svg>

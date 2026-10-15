@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-12",
+  "category": "hackers",
+  "draft": false,
+  "image": "/uploads/five-habits-stop-account-takeovers-89fe98dd.jpg",
+  "imageAlt": {
+    "en": "Illustration of a padlock",
+    "km": "រូបភាពសោរ"
+  },
+  "title": {
+    "en": "Five habits that stop most account takeovers",
+    "km": "ទម្លាប់ ៥ យ៉ាងដែលការពារការលួចគណនីបានភាគច្រើន"
+  },
+  "summary": {
+    "en": "You do not need to be technical to be hard to hack. These five habits make you a much harder target.",
+    "km": "អ្នកមិនចាំបាច់ជាអ្នកបច្ចេកទេសទេ ដើម្បីពិបាកត្រូវបានលួច។ ទម្លាប់ទាំង ៥ នេះធ្វើឱ្យអ្នកក្លាយជាគោលដៅដែលពិបាកវាយប្រហារជាងមុនច្រើន។"
+  },
+  "body": {
+    "en": "Most hacked accounts are not the result of movie-style attacks. Attackers reuse passwords leaked from other sites, guess weak ones, or trick people into handing over codes. A few simple habits close most of those doors.\n\n## 1. Use a unique password for every account\n\nIf one site is breached, a reused password unlocks everything else. A password manager creates and remembers long, random passwords so you only memorise one.\n\n## 2. Turn on two-step verification\n\nEven if someone learns your password, they still need your second factor. Prefer an authenticator app or a security key over SMS codes when the service offers them.\n\n## 3. Keep your devices and apps updated\n\nUpdates fix security holes that attackers actively use. Turn on automatic updates for your phone, computer and browser.\n\n## 4. Never share one-time codes\n\nA code sent to your phone is for you alone. Anyone who asks for it — even someone claiming to be support — is trying to get into your account.\n\n## 5. Back up what matters\n\nKeep a copy of important photos and files somewhere separate. A backup turns a disaster, such as ransomware or a lost phone, into an inconvenience.",
+    "km": "គណនីភាគច្រើនដែលត្រូវបានលួច មិនមែនដោយសារការវាយប្រហារដូចក្នុងកុនទេ។ អ្នកវាយប្រហារប្រើពាក្យសម្ងាត់ដដែលដែលលេចធ្លាយពីគេហទំព័រផ្សេង ទាយពាក្យសម្ងាត់ខ្សោយ ឬបោកឱ្យមនុស្សប្រគល់កូដ។ ទម្លាប់សាមញ្ញៗមួយចំនួនអាចបិទទ្វារទាំងនោះភាគច្រើន។\n\n## ១. ប្រើពាក្យសម្ងាត់ផ្សេងគ្នាសម្រាប់គ្រប់គណនី\n\nបើគេហទំព័រមួយត្រូវបានបំបែក ពាក្យសម្ងាត់ដែលប្រើដដែលៗនឹងអាចបើកគណនីផ្សេងទៀតទាំងអស់។ កម្មវិធីគ្រប់គ្រងពាក្យសម្ងាត់ (Password Manager) អាចបង្កើត និងចងចាំពាក្យសម្ងាត់វែងៗចៃដន្យ ដូច្នេះអ្នកគ្រាន់តែចាំមួយប៉ុណ្ណោះ។\n\n## ២. បើកការផ្ទៀងផ្ទាត់ពីរជំហាន\n\nទោះបីមាននរណាម្នាក់ដឹងពាក្យសម្ងាត់របស់អ្នកក៏ដោយ ពួកគេនៅតែត្រូវការកត្តាទីពីរ។ សូមជ្រើសរើសកម្មវិធី Authenticator ឬសោសុវត្ថិភាព ជាជាងកូដ SMS នៅពេលសេវាកម្មផ្តល់ជូន។\n\n## ៣. ធ្វើបច្ចុប្បន្នភាពឧបករណ៍ និងកម្មវិធីជានិច្ច\n\nការធ្វើបច្ចុប្បន្នភាពជួសជុលចន្លោះប្រហោងសុវត្ថិភាពដែលអ្នកវាយប្រហារកំពុងប្រើ។ សូមបើកការធ្វើបច្ចុប្បន្នភាពស្វ័យប្រវត្តិលើទូរស័ព្ទ កុំព្យូទ័រ និងកម្មវិធីរុករករបស់អ្នក។\n\n## ៤. កុំចែករំលែកកូដ OTP\n\nកូដដែលផ្ញើមកទូរស័ព្ទរបស់អ្នក គឺសម្រាប់តែអ្នកប៉ុណ្ណោះ។ អ្នកណាដែលសុំវា ទោះជាអះអាងថាជាបុគ្គលិកជំនួយក៏ដោយ គឺកំពុងព្យាយាមចូលគណនីរបស់អ្នក។\n\n## ៥. បម្រុងទុកទិន្នន័យសំខាន់ៗ\n\nសូមរក្សាទុកច្បាប់ចម្លងរូបថត និងឯកសារសំខាន់ៗនៅកន្លែងដាច់ដោយឡែក។ ការបម្រុងទុកធ្វើឱ្យគ្រោះមហន្តរាយ ដូចជា Ransomware ឬបាត់ទូរស័ព្ទ ក្លាយជាបញ្ហាតូចតាច។"
+  }
+}

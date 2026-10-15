@@ -1,0 +1,47 @@
+{
+  "name": { "en": "Digital Shield", "km": "ខែលឌីជីថល" },
+  "eyebrow": { "en": "Cyber safety news", "km": "ព័ត៌មានសុវត្ថិភាពអនឡាញ" },
+  "headline": {
+    "en": "Stay safe online, wherever you are.",
+    "km": "ការពារខ្លួនឱ្យមានសុវត្ថិភាពលើអនឡាញ គ្រប់ទីកន្លែង។"
+  },
+  "tagline": {
+    "en": "News and plain-language guides on hackers, phishing, scams and protecting your privacy.",
+    "km": "ព័ត៌មាន និងការណែនាំងាយយល់ អំពីហេគឃ័រ ការបន្លំ ការបោកប្រាស់ និងការការពារឯកជនភាព។"
+  },
+  "footer": {
+    "en": "Independent, educational content to help people stay safer online. Not legal or professional advice.",
+    "km": "មាតិកាអប់រំឯករាជ្យ ដើម្បីជួយមនុស្សឱ្យមានសុវត្ថិភាពជាងមុនលើអនឡាញ។ មិនមែនជាដំបូន្មានផ្នែកច្បាប់ ឬវិជ្ជាជីវៈទេ។"
+  },
+  "url": "",
+  "categories": {
+    "phishing": { "en": "Phishing", "km": "ការបន្លំ" },
+    "hackers": { "en": "Hackers", "km": "ហេគឃ័រ" },
+    "scams": { "en": "Scams", "km": "ការបោកប្រាស់" },
+    "privacy": { "en": "Privacy", "km": "ឯកជនភាព" },
+    "network": { "en": "Network", "km": "បណ្តាញ" }
+  },
+  "tips": [
+    {
+      "title": { "en": "Pause before you click", "km": "ឈប់មុនពេលចុច" },
+      "text": {
+        "en": "Urgent messages are built to rush you. Check the sender and the link first.",
+        "km": "សារបន្ទាន់ត្រូវបានបង្កើតឡើងដើម្បីជំរុញអ្នក។ សូមពិនិត្យអ្នកផ្ញើ និងតំណជាមុនសិន។"
+      }
+    },
+    {
+      "title": { "en": "Unique passwords + two-step login", "km": "ពាក្យសម្ងាត់ផ្សេងគ្នា + ចូលពីរជំហាន" },
+      "text": {
+        "en": "A password manager and two-step verification stop most account takeovers.",
+        "km": "កម្មវិធីគ្រប់គ្រងពាក្យសម្ងាត់ និងការផ្ទៀងផ្ទាត់ពីរជំហាន ទប់ស្កាត់ការលួចគណនីភាគច្រើន។"
+      }
+    },
+    {
+      "title": { "en": "Keep everything updated", "km": "ធ្វើបច្ចុប្បន្នភាពជានិច្ច" },
+      "text": {
+        "en": "Updates close the security holes attackers are already using.",
+        "km": "ការធ្វើបច្ចុប្បន្នភាពបិទចន្លោះប្រហោងសុវត្ថិភាពដែលអ្នកវាយប្រហារកំពុងប្រើ។"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-14",
+  "category": "phishing",
+  "draft": false,
+  "image": "/uploads/spot-a-phishing-message-a81f0060.jpg",
+  "imageAlt": {
+    "en": "Illustration of an email envelope with a fishing hook",
+    "km": "រូបភាពស្រោមសំបុត្រអ៊ីមែលមានទំពក់ស្ទួចត្រី"
+  },
+  "title": {
+    "en": "How to spot a phishing message in 60 seconds",
+    "km": "របៀបសម្គាល់សារបន្លំ (Phishing) ក្នុងរយៈពេល ៦០ វិនាទី"
+  },
+  "summary": {
+    "en": "Fake emails, texts and chat messages all share the same warning signs. Learn the quick checks that stop most phishing attempts.",
+    "km": "អ៊ីមែល សារ SMS និងសារជជែកក្លែងក្លាយ សុទ្ធតែមានសញ្ញាព្រមានស្រដៀងគ្នា។ ស្វែងយល់ពីការត្រួតពិនិត្យរហ័សដែលអាចបញ្ឈប់ការបន្លំភាគច្រើន។"
+  },
+  "body": {
+    "en": "Phishing is when a criminal pretends to be someone you trust — a bank, a delivery company, your boss — to trick you into giving away a password, a code or money. It arrives by email, SMS, social media and chat apps.\n\n## Four quick checks\n\n1. **Urgency or fear.** \"Your account will be closed in 24 hours\" is designed to make you act before you think.\n2. **The sender.** Look at the real address or number, not just the display name. Small spelling changes are a common trick.\n3. **The link.** Hover over it (or press and hold on a phone) to preview the address. If it does not match the company's real website, do not tap it.\n4. **The request.** Real companies do not ask for your password, PIN or one-time code by message.\n\n## If you are not sure\n\n- Do not reply, and do not open attachments you did not expect.\n- Open the official app or type the website address yourself instead of using the link.\n- Contact the company or person using a phone number you already trust.\n\n## If you already clicked\n\nChange the password for that account straight away, turn on two-step verification, and tell your bank if you entered any payment details. Report the message to the platform so others are protected too.",
+    "km": "Phishing (ការបន្លំ) គឺនៅពេលដែលជនឧក្រិដ្ឋធ្វើពុតជាអ្នកដែលអ្នកទុកចិត្ត ដូចជាធនាគារ ក្រុមហ៊ុនដឹកជញ្ជូន ឬថ្នាក់លើរបស់អ្នក ដើម្បីបោកឱ្យអ្នកប្រាប់ពាក្យសម្ងាត់ កូដ ឬផ្ញើលុយ។ វាអាចមកតាមអ៊ីមែល SMS បណ្តាញសង្គម និងកម្មវិធីជជែក។\n\n## ការត្រួតពិនិត្យរហ័ស ៤ យ៉ាង\n\n1. **ភាពប្រញាប់ប្រញាល់ ឬការគំរាម។** សារដូចជា «គណនីរបស់អ្នកនឹងត្រូវបិទក្នុងរយៈពេល ២៤ ម៉ោង» ត្រូវបានបង្កើតឡើងដើម្បីឱ្យអ្នកធ្វើតាមមុនពេលគិត។\n2. **អ្នកផ្ញើ។** សូមមើលអាសយដ្ឋាន ឬលេខពិតប្រាកដ មិនមែនគ្រាន់តែឈ្មោះដែលបង្ហាញនោះទេ។ ការប្តូរអក្សរបន្តិចបន្តួចគឺជាល្បិចដែលគេប្រើញឹកញាប់។\n3. **តំណ (Link)។** សូមដាក់ម៉ៅស៍លើតំណនោះ (ឬចុចសង្កត់លើទូរស័ព្ទ) ដើម្បីមើលអាសយដ្ឋានជាមុន។ បើវាមិនត្រូវនឹងគេហទំព័រពិតរបស់ក្រុមហ៊ុនទេ សូមកុំចុច។\n4. **ការស្នើសុំ។** ក្រុមហ៊ុនពិតប្រាកដមិនសុំពាក្យសម្ងាត់ លេខ PIN ឬកូដ OTP របស់អ្នកតាមសារឡើយ។\n\n## បើអ្នកមិនប្រាកដ\n\n- កុំឆ្លើយតប ហើយកុំបើកឯកសារភ្ជាប់ដែលអ្នកមិនបានរំពឹងទុក។\n- សូមបើកកម្មវិធីផ្លូវការ ឬវាយអាសយដ្ឋានគេហទំព័រដោយខ្លួនឯង ជំនួសឱ្យការប្រើតំណ។\n- សូមទាក់ទងក្រុមហ៊ុន ឬបុគ្គលនោះតាមលេខទូរស័ព្ទដែលអ្នកទុកចិត្តស្រាប់។\n\n## បើអ្នកបានចុចរួចហើយ\n\nសូមប្តូរពាក្យសម្ងាត់គណនីនោះភ្លាមៗ បើកការផ្ទៀងផ្ទាត់ពីរជំហាន ហើយប្រាប់ធនាគារបើអ្នកបានបញ្ចូលព័ត៌មានទូទាត់។ សូមរាយការណ៍សារនោះទៅកាន់វេទិកា ដើម្បីការពារអ្នកផ្សេងទៀតផងដែរ។"
+  }
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Posting tool · Digital Shield</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/admin.css">
+<script src="/admin.js" defer></script>
+</head>
+<body>
+<div class="app">
+
+  <aside class="side">
+    <div class="side-head">
+      <h1>Posting tool</h1>
+      <button type="button" id="btn-new" class="btn primary">+ New post</button>
+    </div>
+    <ul id="list" class="list" aria-label="Posts"></ul>
+    <p class="side-foot">
+      <a id="preview-link" href="#" target="_blank" rel="noopener">Open live preview ↗</a>
+    </p>
+  </aside>
+
+  <main class="editor">
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <form id="form" autocomplete="off" novalidate>
+      <header class="editor-head">
+        <h2 id="editor-title">New post</h2>
+        <span id="slug-note" class="muted"></span>
+      </header>
+
+      <section class="card meta-row">
+        <label>Topic
+          <select id="category"></select>
+        </label>
+        <label>Date
+          <input type="date" id="date" required>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="draft">
+          <span>Draft <small>(hidden from the website)</small></span>
+        </label>
+      </section>
+
+      <section class="card">
+        <h3>Cover image</h3>
+        <div class="cover-row">
+          <div class="cover-box">
+            <img id="cover-preview" alt="" hidden>
+            <span id="cover-empty" class="muted">No image yet</span>
+          </div>
+          <div class="cover-actions">
+            <label class="btn">
+              Choose image…
+              <input type="file" id="cover-file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+            </label>
+            <button type="button" id="cover-remove" class="btn ghost" hidden>Remove</button>
+            <p class="muted">JPG, PNG, WebP or GIF. Large photos are shrunk automatically so the site stays fast.</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="tabs" role="tablist" aria-label="Language">
+        <button type="button" role="tab" data-tab="en" aria-selected="true">English</button>
+        <button type="button" role="tab" data-tab="km" aria-selected="false" lang="km">ខ្មែរ (Khmer)</button>
+      </nav>
+
+      <div id="panes"></div>
+
+      <details class="help">
+        <summary>Formatting help</summary>
+        <p>Write in <strong>Markdown</strong>. The buttons above the text box do most of it.</p>
+        <pre><code>## A heading
+**bold**   _italic_
+- bullet point
+1. numbered step
+[link text](https://example.com)
+![image description](/uploads/photo.jpg)</code></pre>
+      </details>
+
+      <footer class="actions">
+        <button type="submit" class="btn primary" id="btn-save">Save</button>
+        <button type="button" class="btn danger" id="btn-delete" hidden>Delete</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn publish" id="btn-publish">Publish to GitHub</button>
+      </footer>
+
+      <pre id="log" class="log" hidden></pre>
+    </form>
+  </main>
+</div>
+
+<input type="file" id="inline-file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+
+<template id="pane-tpl">
+  <section class="pane card" role="tabpanel">
+    <label>Title
+      <input type="text" class="f-title" maxlength="200">
+    </label>
+    <label>Short summary <small class="muted">(shown on cards and in search results)</small>
+      <textarea class="f-summary" rows="2" maxlength="400"></textarea>
+    </label>
+    <label>Cover image description <small class="muted">(for screen readers)</small>
+      <input type="text" class="f-alt" maxlength="200">
+    </label>
+    <div class="body-head">
+      <span>Article text</span>
+      <div class="toolbar" role="toolbar" aria-label="Formatting">
+        <button type="button" data-act="h2" title="Heading">H</button>
+        <button type="button" data-act="bold" title="Bold"><b>B</b></button>
+        <button type="button" data-act="italic" title="Italic"><i>I</i></button>
+        <button type="button" data-act="ul" title="Bullet list">• List</button>
+        <button type="button" data-act="ol" title="Numbered list">1. List</button>
+        <button type="button" data-act="link" title="Link">Link</button>
+        <button type="button" data-act="image" title="Insert image">Image</button>
+      </div>
+    </div>
+    <div class="split">
+      <textarea class="f-body" rows="16" spellcheck="true"></textarea>
+      <div class="preview prose" aria-label="Preview"></div>
+    </div>
+  </section>
+</template>
+</body>
+</html>
